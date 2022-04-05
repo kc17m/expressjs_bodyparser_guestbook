@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Guestbook - Home</title>
+</head>
+
+<body>
+    <main>
+        <h1>Guestbook </h1>
+        <form action="/" method="POST">
+            <br>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="name" placeholder="Name">
+            <br>
+            <label for="username">User name:</label>
+            <br>
+            <input type="text" name="username" placeholder="username">
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" name="email" placeholder="sample@email.com">
+            <br>
+            <label for="comment">Comment:</label>
+            <br>
+            <textarea name="comment" rows="4" cols="50" placeholder="please write your comment here...."></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+
+        <% users.forEach((user)=> { %>
+            <h3> <span class="bold">
+                    <%- user.name %>
+                </span><span class="plain">(<%- user.username %>)</span> <span class="blue">
+                    <%- user.email%>
+                </span> <span class="plain"> schreibt:</span>
+            </h3>
+            <h5>
+                <%- user.comment %>
+            </h5>
+            <% }) %>
+    </main>
+</body>
+
+</html>
